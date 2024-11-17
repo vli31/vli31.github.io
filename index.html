@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jane Smith - Aspiring Software Engineer</title>
+    <meta name="description" content="Personal website of Jane Smith, an undergraduate student at Harvard University studying Computer Science.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav id="main-nav">
+            <div class="container">
+                <a href="#home" class="logo">Jane Smith</a>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button id="dark-mode-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <div class="container">
+                <img src="jane-smith-photo.jpg" alt="Jane Smith" class="profile-photo">
+                <h1>Jane Smith</h1>
+                <p class="tagline">Aspiring Software Engineer and Problem Solver</p>
+                <p class="intro">Undergraduate student at Harvard University studying Computer Science</p>
+                <div class="typing-container">
+                    <span id="typing-text"></span><span class="cursor">|</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <div class="bio">
+                        <h3>Biography</h3>
+                        <p>I'm a passionate Computer Science student at Harvard University, with a keen interest in artificial intelligence and web development. My academic journey has been marked by challenging coursework and exciting projects that have honed my problem-solving skills and technical expertise.</p>
+                        <p>Notable coursework includes Advanced Algorithms, Machine Learning, and Web Application Development. I've also been actively involved in Harvard's Women in Computer Science organization, where I've had the opportunity to mentor fellow students and organize tech workshops.</p>
+                    </div>
+                    <div class="interests">
+                        <h3>Interests & Hobbies</h3>
+                        <ul>
+                            <li>Competitive Programming</li>
+                            <li>Open Source Contribution</li>
+                            <li>Hiking and Nature Photography</li>
+                            <li>Playing the Piano</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="container">
+                <h2>My Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <i class="fas fa-code"></i>
+                        <h3>Web Development</h3>
+                        <p>HTML, CSS, JavaScript, React</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-robot"></i>
+                        <h3>Machine Learning</h3>
+                        <p>Python, TensorFlow, PyTorch</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Mobile Development</h3>
+                        <p>React Native, Swift</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-database"></i>
+                        <h3>Databases</h3>
+                        <p>SQL, MongoDB, Firebase</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio">
+            <div class="container">
+                <h2>My Projects</h2>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="web">Web Development</button>
+                    <button class="filter-btn" data-filter="ai">AI/ML</button>
+                    <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
+                </div>
+                <div class="projects-grid">
+                    <!-- Project cards will be dynamically added here -->
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>Get in Touch</h2>
+                <form id="contact-form">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/janesmith" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/janesmith" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    <a href="https://twitter.com/janesmith" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                </div>
+                <p class="email">Email: jane.smith@example.com</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Jane Smith. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
