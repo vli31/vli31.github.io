@@ -1,124 +1,149 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>id-predict-ood: reviewer comments → experiments → edits</title><meta name="robots" content="noindex"><style>
-:root{--ink:#1b1b1b;--dim:#5c5c5c;--line:#d9d9d9;--panel:#f6f6f4;--acc:#b5451b}
+<title>id-predict-ood: reviewer comments → experiments → edits</title><meta name="robots" content="noindex"><style>:root{--ink:#1b1b1b;--dim:#5c5c5c;--line:#d9d9d9;--panel:#f6f6f4}
 *{box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;color:var(--ink);background:#fff;margin:0;padding:28px 40px 60px;line-height:1.45;font-size:15px}
 h1{font-size:24px;margin:0 0 10px}h2{font-size:19px;margin:34px 0 10px;border-top:1px solid var(--line);padding-top:18px}
-p{max-width:1200px}code{background:var(--panel);padding:1px 4px;border-radius:3px;font-size:13px}
+p,ul{max-width:1200px}li{margin:3px 0}code{background:var(--panel);padding:1px 4px;border-radius:3px;font-size:13px}
 table{border-collapse:collapse;width:100%;font-size:13.5px;table-layout:fixed}
 th,td{border:1px solid var(--line);padding:10px 12px;vertical-align:top;text-align:left;word-wrap:break-word}
 thead th{background:var(--panel);position:sticky;top:0;z-index:1}
-th:nth-child(1),td:nth-child(1){width:32%}th:nth-child(2),td:nth-child(2){width:40%}th:nth-child(3),td:nth-child(3){width:28%}
-td:nth-child(1){color:var(--dim)}td:nth-child(1) strong{color:var(--ink)}td:nth-child(3){background:#fbf7f3}
-tbody tr:hover{background:#fafafa}
-img{max-width:100%;border:1px solid var(--line);border-radius:6px;margin:6px 0 4px;display:block}
-.meta{color:var(--dim);font-size:13px;margin-bottom:22px}
-@media (max-width:900px){body{padding:16px}table{font-size:12.5px}}
-</style></head>
+th:nth-child(1),td:nth-child(1){width:7%}th:nth-child(2),td:nth-child(2){width:30%}th:nth-child(3),td:nth-child(3){width:37%}th:nth-child(4),td:nth-child(4){width:26%}
+td:nth-child(2){color:var(--dim)}td:nth-child(2) strong{color:var(--ink)}tbody tr:hover td{filter:brightness(0.98)}
+td.pri{font-weight:600;white-space:nowrap}tr.must td.pri{background:#f8d7d7;color:#7a1f1f}tr.should td.pri{background:#fff1c2;color:#6b5300}tr.optional td.pri{background:#d9f0dc;color:#1f5e2a}
+tr.must td{background:#fff6f6}tr.should td{background:#fffcf2}tr.optional td{background:#f6fbf6}
+td:nth-child(4){border-left:3px solid #bbb}tr.must td:nth-child(4){border-left-color:#c0392b}tr.should td:nth-child(4){border-left-color:#d4a400}tr.optional td:nth-child(4){border-left-color:#3a9a4a}
+img{max-width:100%;border:1px solid var(--line);border-radius:6px;margin:6px 0 4px;display:block}.meta{color:var(--dim);font-size:13px}
+@media (max-width:900px){body{padding:16px}table{font-size:12.5px}}</style></head>
 <body><h1>Reviewer comments → experiments → manuscript edits</h1>
-<p>Submission 190 (Accept). Experiments run 2026-09-08 on the released artefacts: 270 Dyck-1 Transformers × 5 checkpoints, 1K ID / 1K OOD test strings, 79 question-formation (QF) models. Recomputed ID quantities match the released CSVs. AUROC = predicting hierarchical generalisation (OOD acc ≥ 0.5) of held-out models; chance 0.50. Numbers from <code>results/</code>; figures below the table.</p>
+<p>Paper: "Can interpretation predict behavior on unseen data?" (Submission 190, accepted). This page lists each reviewer comment, the experiment we ran in response, and the edit to make in the final version. Rows are sorted by priority.</p>
+<p><strong>Priority</strong></p>
+<ul>
+<li>🔴 <strong>Must change</strong>: a factual error, or a claim in the paper that the new results show is wrong or unsupported.</li>
+<li>🟡 <strong>Should change</strong>: a clarification or limitation that reviewers asked for; cheap to add.</li>
+<li>🟢 <strong>Optional</strong>: wording, or an addition nobody asked for.</li>
+</ul>
+<p><strong>Background, for a reader new to the paper</strong></p>
+<ul>
+<li><em>The task.</em> Models read a string of brackets like <code>(()())</code> and say whether it is well formed. Two rules fit the training data: the <em>counting rule</em> (same number of <code>(</code> and <code>)</code>) and the <em>nesting rule</em> (every <code>)</code> closes an earlier <code>(</code>). Only the nesting rule is right on strings such as <code>)(</code>.</li>
+<li><em>ID and OOD.</em> ID (in-distribution) test strings look like the training data; both rules give the same answer on them. OOD (out-of-distribution) test strings were chosen so the two rules disagree. A model's <em>OOD accuracy</em> is how often it gives the nesting-rule answer on those strings.</li>
+<li><em>Hierarchical model</em>: OOD accuracy ≥ 0.5, meaning it mostly follows the nesting rule. The paper trained 270 small Transformers; all reach near-perfect ID accuracy but differ in OOD accuracy.</li>
+<li><em>Attention head</em>: a part of a Transformer that decides which earlier positions in the string to read from. The paper's <em>hierarchical-head score</em> is how often, on ID strings, a head's attention separates the positions where nesting is violated from those where it is not.</li>
+<li><em>Paper's predictor</em>: call a model hierarchical if any of its heads has a hierarchical-head score ≥ 0.8. <em>Head-score classifier</em>: a standard classifier (logistic regression or random forest) fit on the paper's per-layer head scores instead of using the fixed 0.8 rule.</li>
+<li><em>Generic features</em>: statistics of ID attention that use no information about brackets, depth or violations: how spread out attention is (entropy), how much goes to the start, the current token, the first or last token, and where along the string it falls.</li>
+<li><em>Geometry</em>: how similar a model's internal representations of different ID strings are to each other. Two models have similar geometry if they group the same strings together internally.</li>
+<li><em>Hyperparameters</em>: training settings: number of layers, number of attention heads, weight decay (a regularisation strength). They were varied across the 270 models.</li>
+<li><em>Held-out prediction</em>: fit a predictor on some models, then test it on other models it never saw. <em>AUROC</em> measures how well the predictor ranks hierarchical models above the others: 1.0 = perfect, 0.5 = chance.</li>
+<li><em>t-SNE and PCA</em>: two ways to draw high-dimensional data in 2D. PCA is a linear projection that keeps overall distances. t-SNE keeps only which points are near each other and can make a continuum look like separate clusters.</li>
+<li><em>Cluster statistics.</em> <em>Silhouette</em>: how separated clusters are (1 = clearly separated, 0 = no structure). <em>ARI</em>: agreement between two groupings (1 = identical, 0 = chance). <em>Dip test</em>: a test of whether a distribution has more than one peak.</li>
+<li><em>Question formation (QF)</em>: the paper's second task. Models turn a statement into a yes/no question by moving an auxiliary verb ("does", "doesn't"). Two rules fit the training data: move the <em>first</em> auxiliary, or move the <em>main-clause</em> auxiliary. OOD sentences are those where the two rules disagree. The paper's feature there is a head that attends to the main-clause auxiliary. 79 models.</li>
+</ul>
 <table>
 <thead>
 <tr>
+<th>Priority</th>
 <th>Reviewer (exact quote)</th>
-<th>Experiment and result</th>
+<th>What we ran; what we found</th>
 <th>Edit for the final manuscript</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><strong>RAoL W1.</strong> "The paper defines/presents hierarchical heads using whether attention tracks violations of the very NESTED constraint that defines the OOD distinction, which makes the predictor highly task-specific and somewhat close to constructing a detector for the target property. A stronger demonstration would be needed to show that internal analysis can predict an OOD behavior whose relevant computational property was not explicitly used to define the interpretability criterion."</td>
-<td><strong>E1 (Fig. E1), E4 (Fig. E4).</strong> Built ID features with no reference to depth or violations: attention entropy, attention to BOS/self/first/last token, positional profile, all-query statistics; and the RDM of the final-token representation. Fit predictors on some models, tested on held-out models. Dyck-1 AUROC: generic attention 0.89–0.94, representational geometry 0.89–0.91, paper's fixed rule 0.88, paper's head scores 0.89–0.90. Generic features predict the paper's head scores with CV R² 0.84–0.86. QF (n=79): generic 0.84, matrix-auxiliary feature 0.75.</td>
-<td>Add subsection "Task-agnostic predictors" with the AUROC table; state that the hierarchical-head criterion is one instance of a general ID→OOD signal.</td>
-</tr>
-<tr>
-<td><strong>RAoL W2.</strong> "t-SNE is designed to preserve local neighborhoods while distorting global geometry, so apparent clusters can arise from the visualization procedure and its hyperparameters rather than from genuinely discrete structure in the models' OOD behavior, I guess it would be good to add analysis to quantify clustering directly in the original OOD-output space and test whether models genuinely form distinct behavioral modes rather than a continuous distribution that t-SNE makes look categorical."</td>
-<td><strong>E2 (Fig. E2a, E2b).</strong> In the raw 1000-d OOD-output space: k-means silhouette 0.57 (k=2), 0.54 (k=3) vs max 0.39 / 0.21 under covariance-matched Gaussian and PCA-box uniform nulls; bootstrap ARI 0.98; dip tests reject unimodality for OOD accuracy, PC1, pairwise distances (p&lt;0.001); gap statistic selects no k. k=3: count-matching 94 models (acc ≤0.20, silhouette 0.85), intermediate 59 (acc 0.20–0.57, silhouette 0.14), hierarchical 117 (acc 0.61–1.0, silhouette 0.50). 57% of models have OOD acc in (0.1, 0.9). PC1 = 72% of variance, Spearman 0.99 with OOD acc. Isolated t-SNE blob = 14 first-symbol models. Intermediate models' per-example decisions are predictable from string features (+0.25 over majority).</td>
-<td>Replace "models fall into discrete clusters" with "two crisp modes (count-matching, first-symbol) and a graded continuum toward hierarchical; the t-SNE gradient is OOD accuracy." Add PCA panel beside t-SNE; silhouette/null/dip statistics to appendix.</td>
-</tr>
-<tr>
-<td><strong>RAoL.</strong> "The distinction between predictive and causal evidence is made several times in Sections 4.3 and 5, and could be reduced to make it concise and easily readable."</td>
-<td>—</td>
-<td>State once at the start of 4.3; one back-reference in 5.</td>
-</tr>
-<tr>
-<td><strong>RAoL.</strong> "Instead of framing the work broadly as a 'new mission for interpretability,' (in the intro), a more concrete statement could be added somethiing like 'we introduce OOD behavioral prediction from ID internal states as an additional evaluation objective for interpretability'."</td>
-<td>—</td>
-<td>Use the reviewer's sentence in the intro; remove "mission" from abstract and conclusion.</td>
-</tr>
-<tr>
-<td><strong>tsfC W1.</strong> "One thing it would be nice to have seen is more connection to explanations in literature that evaluate interpretability methods by how well they predict OOD. ... LIME and SHAP ... simulatability ... (see Hase and Bansal, 2020) ... Hase et al. 2020, Mayne et al. 2026. ... it would be useful to tie it to the theoretical idea of prediction as an evaluation method, which is a long-established idea."</td>
-<td>—</td>
-<td>Related work paragraph: prediction as an evaluation criterion is simulatability (Hase &amp; Bansal 2020; Hase et al. 2020; Mayne et al. 2026) and underlies LIME/SHAP; this work differs in reading internal states rather than input–output pairs or explanations, and in evaluating on OOD inputs where ID-equivalent models diverge. Cite where the objective is introduced.</td>
-</tr>
-<tr>
-<td><strong>tsfC W2.</strong> "it seemed that it was based on analysing the different attention patterns from the two groups of trained models. ... If this is the case, it seems quite circular. i.e. the two groups are established based on their OOD performance, then differences in the attention patterns are associated with the different generalisations. ... Perhaps one change to the methodology could be to train another model to predict the generalisation based on ~150 of the transformer models and show that this generalises to the ~100 held-out models."</td>
-<td><strong>E1 (Fig. E1).</strong> 50 random splits, 150 train / 120 test: logistic regression on the paper's ID head scores, accuracy 0.82, AUROC 0.88; paper's fixed rule 0.79 / 0.88; random forest 0.89; majority 0.52. Baselines: hyperparameters alone (n_layer, n_head, wd) 0.88–0.90; the 1000 ID output probabilities alone 0.93. Leave-one-(n_layer, wd)-cell-out: hyperparameters 0.44–0.49; ID outputs 0.82; RSA k-NN 0.80; paper rule 0.74; head scores 0.73. Leave-one-seed-out: all ≈0.9.</td>
-<td>Add "Held-out prediction" to Section 4 with the 150/120 table and both baselines; make the leave-one-cell-out result the evidence that internals predict beyond training configuration.</td>
-</tr>
-<tr>
-<td><strong>tsfC.</strong> "More explanation about how you do the classification after clustering given there are 270 models."</td>
-<td>—</td>
-<td>Methods: head type is assigned from ID attention only (score ≥0.8 on any head in any layer); report counts per type [from Fig. 5]; t-SNE is visualisation only and never enters classification.</td>
-</tr>
-<tr>
-<td><strong>DaQT W1.</strong> "Novelty is overstated. The paper frames predictive interpretability as a new paradigm, but the distinction between diagnostic/predictive usefulness and causal responsibility is already well established."</td>
-<td>—</td>
-<td>Remove "new paradigm"/"new mission". Describe the contribution as an empirical demonstration in populations of ID-equivalent models, including a case where prediction and ablation disagree. Cite simulatability work.</td>
-</tr>
-<tr>
-<td><strong>DaQT W2.</strong> "The proposed framework is not sufficiently general. The experiments assume known candidate behaviors and hand-motivated internal features that correspond to those behaviors. It is unclear how the approach would work when the relevant strategies or OOD failure modes are not known in advance." / "Please explain how the framework would extend to settings where the relevant OOD behaviors or candidate algorithms are not known in advance."</td>
-<td><strong>E3 (Fig. E3), negative.</strong> Unsupervised clustering of ID internals recovers architecture (ARI 1.0 with n_layer), not the rule (ARI 0.24–0.28); layer-agnostic features ARI ≈0; RSA-geometry clustering degenerate. Signal exists but is not dominant: nearest ID-geometry neighbours differ in OOD acc by 0.18 vs 0.42 for random pairs. <strong>E1.</strong> With OOD labels for a subset, task-agnostic features transfer to unseen models (0.89–0.94), unseen hyperparameter cells (0.73–0.80), earlier checkpoints (E5).</td>
-<td>Add a limitation: mode discovery without labelled models or candidate behaviours failed in this population; the approach needs a small labelled subset or hypothesised behaviours. Given either, task-specific features are not needed (point to the task-agnostic subsection).</td>
-</tr>
-<tr>
-<td><strong>DaQT W3.</strong> "The population-level methodology limits applicability. The predictive analysis relies on many independently trained models, whereas realistic interpretability settings may involve only one or a few expensive models."</td>
-<td><strong>E1, E5 (Fig. E5).</strong> Predictor transfers without retraining: leave-one-seed-out ≈0.9; leave-one-cell-out 0.73–0.80. ID internals at 200K datapoints predict the 1M rule with AUROC 0.89 (paper head scores 0.89, generic 0.89, hyperparameters 0.88); the model's own OOD acc at 200K also gives 0.89. 16% of models change class after 200K, 6% after 600K.</td>
-<td>State the limitation, then: "The population is needed to fit the predictor, not to apply it; once fit, it transfers to new models and earlier checkpoints." No single-model claim.</td>
-</tr>
-<tr>
-<td><strong>DaQT W4.</strong> "The ablation results may be overinterpreted. A mismatch between correlation and ablation does not necessarily imply that causal interpretation is misleading; it may also reflect limitations of the intervention itself, including redundancy, compensation, or off-distribution internal states."</td>
-<td>— (QF targeted ablations already in paper: mean ΔOOD −0.007 to +0.002.)</td>
-<td>Add to 4.3: a mismatch can arise from redundancy, compensation or off-distribution internal states; we make no claim about which; predictive value is assessable without resolving it.</td>
-</tr>
-<tr>
-<td><strong>DaQT W5.</strong> "The experiments are highly controlled. The synthetic tasks are useful as a proof of concept, but the paper sometimes draws broader conclusions than these settings seem to justify."</td>
-<td>—</td>
-<td>Scope general claims to "populations of small Transformers on tasks with ID-equivalent rules"; move expectations to Future Work.</td>
-</tr>
-<tr>
-<td><strong>DaQT.</strong> "Statements overclaiming the novelty of the perspective need to be toned down."</td>
-<td>—</td>
-<td>Covered by the W1 edit.</td>
-</tr>
-<tr>
+<tr class="must">
+<td class="pri">🔴 Must</td>
 <td><strong>DaQT.</strong> "The question-formation population is reported as 73 models in the main text and 79 models in Appendix M; please reconcile this inconsistency."</td>
-<td><strong>E4.</strong> Released CSVs: 79 models, 79 distinct seeds (42–120), all ID acc 1.0, so no accuracy filter removes any. Drive folder: 119 run directories, 40 duplicate-seed re-runs dropped by the notebook (first directory per seed) → 79.</td>
-<td>Change 73 to 79 in the main text; Appendix M is correct.</td>
+<td>Counted. The released files have 79 models with 79 distinct random seeds, all at ID accuracy 1.0, so no filter removes any. The public model folder has 119 run directories; 40 are repeats of the same seed that the analysis code drops, leaving 79.</td>
+<td>Change 73 to 79 in the main text. Appendix M is correct.</td>
 </tr>
-<tr>
+<tr class="must">
+<td class="pri">🔴 Must</td>
 <td><strong>DaQT.</strong> "line 1517 'is not a generic but be present a proof of existence'"</td>
 <td>—</td>
 <td>"is not a general result but a proof of existence."</td>
 </tr>
-<tr>
+<tr class="must">
+<td class="pri">🔴 Must</td>
+<td><strong>RAoL W2.</strong> "t-SNE is designed to preserve local neighborhoods while distorting global geometry, so apparent clusters can arise from the visualization procedure and its hyperparameters rather than from genuinely discrete structure in the models' OOD behavior, I guess it would be good to add analysis to quantify clustering directly in the original OOD-output space and test whether models genuinely form distinct behavioral modes rather than a continuous distribution that t-SNE makes look categorical."</td>
+<td>Computed cluster statistics directly on each model's 1000 OOD answers, with no t-SNE (Fig. E2a, E2b). There is real cluster structure: silhouette 0.57, vs at most 0.39 for data with the same spread but no clusters; clusters are stable under resampling (ARI 0.98); OOD accuracy has more than one peak (dip test p&lt;0.001). But only two clusters are tight: 94 models that follow the counting rule (OOD accuracy ≤ 0.20) and 14 models that answer from the first bracket only. The other 162 models spread continuously from 0.2 to 1.0 OOD accuracy; 57% of all models are between 0.1 and 0.9. The main axis of variation (72% of variance) is OOD accuracy itself.</td>
+<td>The paper currently says models fall into discrete clusters. Change to: "two tight clusters (counting rule, first-bracket rule) and a continuum of partly hierarchical models". Show the PCA plot next to the t-SNE. Put the statistics in an appendix.</td>
+</tr>
+<tr class="must">
+<td class="pri">🔴 Must</td>
+<td><strong>tsfC W2.</strong> "it seemed that it was based on analysing the different attention patterns from the two groups of trained models. ... If this is the case, it seems quite circular. i.e. the two groups are established based on their OOD performance, then differences in the attention patterns are associated with the different generalisations. ... Perhaps one change to the methodology could be to train another model to predict the generalisation based on ~150 of the transformer models and show that this generalises to the ~100 held-out models."</td>
+<td>Did exactly this: fit on 150 models, test on the other 120, 50 random splits (Fig. E1). Head-score classifier: accuracy 0.82, AUROC 0.88. Paper's predictor: 0.79, 0.88. Chance: 0.52. Two baselines matter. Hyperparameters alone predict OOD class with AUROC 0.88–0.90, and a model's 1000 ID answers alone reach 0.93. To separate internals from training settings, we held out all models with a given (depth, weight decay) setting: hyperparameters fall to chance (0.44–0.49) while ID-based predictors still work (ID answers 0.82, geometry 0.80, paper's predictor 0.74, head-score classifier 0.73).</td>
+<td>Add a "Held-out prediction" section with the 150/120 table, both baselines, and the held-out-setting result. This answers the circularity concern directly.</td>
+</tr>
+<tr class="must">
+<td class="pri">🔴 Must</td>
+<td><strong>RAoL W1.</strong> "The paper defines/presents hierarchical heads using whether attention tracks violations of the very NESTED constraint that defines the OOD distinction, which makes the predictor highly task-specific and somewhat close to constructing a detector for the target property. A stronger demonstration would be needed to show that internal analysis can predict an OOD behavior whose relevant computational property was not explicitly used to define the interpretability criterion."</td>
+<td>Held-out prediction using only generic features or geometry, neither of which knows about brackets or nesting (Fig. E1, E4). Bracket task AUROC: generic features 0.89–0.94, geometry 0.89–0.91, paper's predictor 0.88, head-score classifier 0.89–0.90. The generic features also predict the paper's head scores (R² 0.84–0.86), so the same information is present without being built in. QF, 79 models: generic features 0.84, paper's main-clause-auxiliary feature 0.75.</td>
+<td>Add a subsection "Predictors that do not use the nesting property" with this table. The two reviewers who raised this (RAoL W1, DaQT W2) get the same answer.</td>
+</tr>
+<tr class="should">
+<td class="pri">🟡 Should</td>
+<td><strong>DaQT W1.</strong> "Novelty is overstated. The paper frames predictive interpretability as a new paradigm, but the distinction between diagnostic/predictive usefulness and causal responsibility is already well established." Also DaQT: "Statements overclaiming the novelty of the perspective need to be toned down." And RAoL: "Instead of framing the work broadly as a 'new mission for interpretability,' ... 'we introduce OOD behavioral prediction from ID internal states as an additional evaluation objective for interpretability'."</td>
+<td>—</td>
+<td>Delete "new paradigm" and "new mission" everywhere. Use RAoL's sentence in the introduction. Describe the contribution as an empirical demonstration in populations of models that behave identically ID, including a case where prediction and ablation disagree.</td>
+</tr>
+<tr class="should">
+<td class="pri">🟡 Should</td>
+<td><strong>tsfC W1.</strong> "One thing it would be nice to have seen is more connection to explanations in literature that evaluate interpretability methods by how well they predict OOD. ... LIME and SHAP ... simulatability ... (see Hase and Bansal, 2020) ... Hase et al. 2020, Mayne et al. 2026. ... it would be useful to tie it to the theoretical idea of prediction as an evaluation method, which is a long-established idea."</td>
+<td>—</td>
+<td>Add to related work: judging an explanation by how well it predicts model behaviour is called simulatability (Hase &amp; Bansal 2020; Hase et al. 2020; Mayne et al. 2026) and is the basis of LIME and SHAP. This paper differs in two ways: the predictor reads internal states, not input–output pairs or written explanations, and the test inputs are out of distribution, where models with identical ID behaviour diverge.</td>
+</tr>
+<tr class="should">
+<td class="pri">🟡 Should</td>
+<td><strong>tsfC.</strong> "More explanation about how you do the classification after clustering given there are 270 models."</td>
+<td>—</td>
+<td>In Methods: each model's head type is decided from ID attention alone (a head qualifies if its score ≥ 0.8; a model has the type if any head in any layer qualifies). Give the number of models of each type [from Fig. 5]. State that t-SNE is only a picture and is not used to classify models.</td>
+</tr>
+<tr class="should">
+<td class="pri">🟡 Should</td>
+<td><strong>DaQT W2.</strong> "The proposed framework is not sufficiently general. The experiments assume known candidate behaviors and hand-motivated internal features that correspond to those behaviors. It is unclear how the approach would work when the relevant strategies or OOD failure modes are not known in advance." / "Please explain how the framework would extend to settings where the relevant OOD behaviors or candidate algorithms are not known in advance."</td>
+<td>Grouped models by ID features alone, with no OOD labels, and checked whether the groups match OOD behaviour (Fig. E3). They do not: the groups match architecture (ARI 1.0 with number of layers), not behaviour (ARI 0.24–0.28). The behavioural signal is there but weak: a model's nearest neighbours in geometry differ from it in OOD accuracy by 0.18, vs 0.42 for random pairs. With OOD labels for some models, generic-feature predictors carry over to new models (0.89–0.94), to unseen hyperparameter settings (0.73–0.80) and to earlier training checkpoints (Fig. E5).</td>
+<td>Add a limitation: finding the behavioural modes from ID internals with no labelled models and no candidate behaviours did not work here. The method needs one or the other. Given either, the features need not be task-specific (see the new subsection above).</td>
+</tr>
+<tr class="should">
+<td class="pri">🟡 Should</td>
+<td><strong>DaQT W3.</strong> "The population-level methodology limits applicability. The predictive analysis relies on many independently trained models, whereas realistic interpretability settings may involve only one or a few expensive models."</td>
+<td>Two checks (Fig. E1, E5). A predictor fit on one population applies to new models without refitting: AUROC about 0.9 on held-out seeds, 0.73–0.80 on held-out hyperparameter settings. ID features measured after 200K training examples predict the model's behaviour after 1M with AUROC 0.89, the same as the model's own OOD accuracy at 200K; 16% of models change class after 200K, 6% after 600K.</td>
+<td>State the limitation, then: "The population is needed to fit the predictor, not to apply it. Once fit, it applies to new models and earlier checkpoints." Do not claim it works for a single model.</td>
+</tr>
+<tr class="should">
+<td class="pri">🟡 Should</td>
+<td><strong>DaQT W4.</strong> "The ablation results may be overinterpreted. A mismatch between correlation and ablation does not necessarily imply that causal interpretation is misleading; it may also reflect limitations of the intervention itself, including redundancy, compensation, or off-distribution internal states."</td>
+<td>— (The QF ablations already in the paper change OOD accuracy by between −0.007 and +0.002 on average.)</td>
+<td>Add to 4.3: a mismatch between predictive value and ablation effect can come from redundancy, compensation or off-distribution states. We do not claim which. Predictive value can be measured without settling this.</td>
+</tr>
+<tr class="optional">
+<td class="pri">🟢 Optional</td>
+<td><strong>DaQT W5.</strong> "The experiments are highly controlled. The synthetic tasks are useful as a proof of concept, but the paper sometimes draws broader conclusions than these settings seem to justify."</td>
+<td>—</td>
+<td>Limit general claims to "populations of small Transformers on tasks where several rules fit the training data". Move expectations about larger models to Future Work.</td>
+</tr>
+<tr class="optional">
+<td class="pri">🟢 Optional</td>
+<td><strong>RAoL.</strong> "The distinction between predictive and causal evidence is made several times in Sections 4.3 and 5, and could be reduced to make it concise and easily readable."</td>
+<td>—</td>
+<td>State it once at the start of 4.3. Refer back to it in one sentence in Section 5.</td>
+</tr>
+<tr class="optional">
+<td class="pri">🟢 Optional</td>
 <td><em>(Not raised by reviewers.)</em></td>
-<td><strong>E1.</strong> k-NN in generic ID-feature space predicts a held-out model's 1000 OOD outputs with 0.86 per-example agreement; population-majority vector 0.64; class oracle 0.88. Intermediate models: 0.82 vs 0.74.</td>
-<td>One sentence in Section 4 noting prediction extends to individual OOD inputs; numbers in appendix.</td>
+<td>Predicted a held-out model's 1000 individual OOD answers, not just its class, by averaging its nearest neighbours in generic-feature space: 0.86 of answers correct. Using the most common answer for each string across all models: 0.64. Knowing the model's true class: 0.88.</td>
+<td>One sentence in Section 4 saying prediction extends to individual OOD inputs. Numbers in the appendix.</td>
 </tr>
 </tbody>
 </table>
 <h2>Figures</h2>
-<p><strong>Fig. E1.</strong> AUROC by feature set (best of logistic / random forest, mean ± sd over folds). Red: paper's head scores and fixed rule. Blue: task-agnostic ID internals. Grey/pink: baselines. Panels: 5-fold ×10; 150/120 ×50; leave-one-(n_layer, wd)-cell-out; leave-one-seed-out; leave-one-depth-out.</p>
+<p><strong>Fig. E1.</strong> AUROC for each set of ID features. Red: the paper's predictor and head-score classifier. Blue: generic features and geometry. Grey and pink: baselines (hyperparameters, ID answers, chance). Panels, left to right: 5-fold cross-validation; 150/120 splits; hold out one (depth, weight decay) setting; hold out one random seed; hold out one depth (this last one is unfair to per-layer features and is for completeness).</p>
 <p><a href="figures/e1_feature_sets.png" target="_blank"><img alt="E1" src="figures/e1_feature_sets.png" loading="lazy"/></a></p>
-<p><strong>Fig. E2a.</strong> Raw OOD-output space. OOD-accuracy histogram; silhouette vs k with two continuous nulls; gap statistic; PCA (colour = OOD acc); t-SNE with the paper's settings; agreement with first-symbol vs hierarchical rule, colour = k-means k=3.</p>
+<p><strong>Fig. E2a.</strong> The OOD answers without t-SNE. Top: histogram of OOD accuracy; silhouette for 2 to 10 clusters with two cluster-free reference distributions; gap statistic. Bottom: PCA coloured by OOD accuracy; the paper's t-SNE; each model's agreement with the first-bracket rule against its agreement with the nesting rule, coloured by cluster.</p>
 <p><a href="figures/e2_ood_cluster_structure.png" target="_blank"><img alt="E2a" src="figures/e2_ood_cluster_structure.png" loading="lazy"/></a></p>
-<p><strong>Fig. E2b.</strong> t-SNE across perplexities and seeds, colour = OOD accuracy.</p>
+<p><strong>Fig. E2b.</strong> t-SNE at different settings and seeds, coloured by OOD accuracy.</p>
 <p><a href="figures/e2_tsne_robustness.png" target="_blank"><img alt="E2b" src="figures/e2_tsne_robustness.png" loading="lazy"/></a></p>
-<p><strong>Fig. E3.</strong> ID internals without OOD labels. PCA of layer-agnostic attention features coloured by OOD acc and by n_layer; MDS of RSA distance coloured by OOD acc.</p>
+<p><strong>Fig. E3.</strong> ID features with no OOD labels. Left and middle: PCA of generic features coloured by OOD accuracy and by number of layers. Right: geometry distances between models, coloured by OOD accuracy.</p>
 <p><a href="figures/e3_unsupervised_discovery.png" target="_blank"><img alt="E3" src="figures/e3_unsupervised_discovery.png" loading="lazy"/></a></p>
-<p><strong>Fig. E4.</strong> QF, 79 models, 5-fold ×20. Red: matrix-auxiliary feature. Blue: task-agnostic attention statistics from the "quest" position on 406 ID questions, and representational geometry.</p>
+<p><strong>Fig. E4.</strong> Question formation, 79 models. Red: the paper's main-clause-auxiliary feature. Blue: generic features and geometry, computed on the 406 ID questions.</p>
 <p><a href="figures/e4_qf_feature_sets.png" target="_blank"><img alt="E4" src="figures/e4_qf_feature_sets.png" loading="lazy"/></a></p>
-<p><strong>Fig. E5.</strong> AUROC for the final (1M) class from ID features at 200K–1M datapoints; dashed = model's own OOD acc at that checkpoint. Right: fraction of models whose class still changes.</p>
+<p><strong>Fig. E5.</strong> Left: AUROC for predicting the final (1M-example) class from ID features measured after 200K to 1M training examples. Dashed: the model's own OOD accuracy at that point. Right: fraction of models whose class still changes after that point.</p>
 <p><a href="figures/e5_temporal.png" target="_blank"><img alt="E5" src="figures/e5_temporal.png" loading="lazy"/></a></p>
 <h2>Files</h2>
-<p>Scripts: <code>extract_features.py</code>, <code>extract_qf_features.py</code>, <code>e1_heldout_prediction.py</code>, <code>e2_ood_cluster_structure.py</code>, <code>e3_unsupervised_discovery.py</code>, <code>e4_qf_analysis.py</code>, <code>e5_temporal.py</code>. Results: <code>results/</code>. Features: <code>features/*.npz</code> (not committed). Detailed HTML report: <code>report/index.html</code>.</p><p class="meta">Source: <code>review_experiments/REVIEWER_RESPONSE.md</code> in <a href="https://github.com/vli31/id-predict-ood">vli31/id-predict-ood</a>. Click a figure to open it full size.</p></body></html>
+<p>Scripts: <code>extract_features.py</code>, <code>extract_qf_features.py</code>, <code>e1_heldout_prediction.py</code>, <code>e2_ood_cluster_structure.py</code>, <code>e3_unsupervised_discovery.py</code>, <code>e4_qf_analysis.py</code>, <code>e5_temporal.py</code>. Results: <code>results/</code>. Features: <code>features/*.npz</code> (not committed). Detailed HTML report: <code>report/index.html</code>. Page built by <code>build_pages.py</code>.</p><p class="meta">Source: <code>review_experiments/REVIEWER_RESPONSE.md</code> in <a href="https://github.com/vli31/id-predict-ood">vli31/id-predict-ood</a>. Click a figure to open it full size.</p></body></html>
