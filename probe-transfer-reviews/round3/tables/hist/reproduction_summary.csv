@@ -1,0 +1,6 @@
+row_id,row_set,rows,rows_reproduced,rows_differ_rounding,rows_differ_rounding_accepted,rows_differ_start_vector,rows_differ_start_vector_accepted,rows_differ_open,rows_incomplete,cells_compared,cells_identical,stored_expression_cells_compared,stored_expression_cells_within_1e_12,rounding_max_abs_diff_auroc,rounding_max_abs_diff_auroc_billionths,rounding_cells_tpr_diff_nonzero,rounding_max_tpr_diff_positives,start_vector_max_abs_diff_auroc,start_vector_max_abs_diff_auroc_millionths,start_vector_cells_tpr_diff_nonzero,start_vector_max_tpr_diff_positives,open_max_abs_diff_auroc,open_max_tpr_diff_positives
+all,all,158,121,35,35,2,2,0,0,10412,8233,2328,2328,5.0142778373896135e-08,50.142778373896135,1,1.0000000000012519,2.3054682206091748e-05,23.054682206091748,6,40.00000000000216,0.0,0.0
+olmo refusal,olmo refusal,54,42,12,12,0,0,0,0,3024,2468,672,672,2.9178261251594506e-08,29.178261251594506,0,0.0,0.0,0.0,0,0.0,0.0,0.0
+olmo harm,olmo harm,52,39,11,11,2,2,0,0,3808,2942,840,840,1.308017405499129e-08,13.08017405499129,1,1.0000000000012519,2.3054682206091748e-05,23.054682206091748,6,40.00000000000216,0.0,0.0
+qwen refusal,qwen refusal,24,18,6,6,0,0,0,0,1340,1053,336,336,5.0142778373896135e-08,50.142778373896135,0,0.0,0.0,0.0,0,0.0,0.0,0.0
+qwen harm,qwen harm,28,22,6,6,0,0,0,0,2240,1770,480,480,1.4295048922363662e-08,14.295048922363662,0,0.0,0.0,0.0,0,0.0,0.0,0.0

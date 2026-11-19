@@ -1,0 +1,21 @@
+row_id,panel,transfer,panel_id,model_family,objective,seeds_planned,seeds_complete,cells_planned,cells_present,cells_failed,fitting_budgets,panels,panels_complete
+R1,R1,Base → Think-SFT,olmo_refusal__base_think_sft,olmo,refusal,8,8,56,56,0,7,1,1
+R2,R2,Think-SFT → Instruct-SFT,olmo_refusal__think_sft_insft,olmo,refusal,8,8,56,56,0,7,1,1
+R3,R3,Base → Instruct-SFT,olmo_refusal__base_insft,olmo,refusal,8,8,56,56,0,7,1,1
+R4,R4,Instruct-SFT → Instruct-DPO,olmo_refusal__insft_indpo,olmo,refusal,8,8,56,56,0,7,1,1
+R5,R5,Think-SFT → Think-DPO,olmo_refusal__think_sft_think_dpo,olmo,refusal,8,8,56,56,0,7,1,1
+R6,R6,Think-DPO → Think-RLVR,olmo_refusal__think_dpo_think_rlvr,olmo,refusal,8,8,56,56,0,7,1,1
+H1,H1,Base → DPO,olmo_harm__base_dpo,olmo,harm,8,8,88,88,0,11,1,1
+H2,H2,Instruct → clinical,olmo_harm__irl_sft2_clin,olmo,harm,8,8,88,88,0,11,1,1
+H3,H3,Instruct → code,olmo_harm__irl_sft2_code,olmo,harm,8,8,88,88,0,11,1,1
+H4,H4,Instruct → science,olmo_harm__irl_sft2_sci,olmo,harm,8,8,88,88,0,11,1,1
+H5,H5,SFT → DPO,olmo_harm__sft_dpo,olmo,harm,8,8,8,8,0,1,1,1
+H6,H6,"Base → SFT step 15,000",olmo_harm__base_sft_s15000,olmo,harm,8,8,64,64,0,8,1,1
+H7,H7,"Base → SFT step 30,000",olmo_harm__base_sft_s30000,olmo,harm,8,8,64,64,0,8,1,1
+Q1,Q1,Base → SFT,qwen_refusal__qwen_base_qwen_sft,qwen,refusal,8,8,56,56,0,7,1,1
+Q2,Q2,Base → RL,qwen_refusal__qwen_base_qwen_rl,qwen,refusal,8,8,56,56,0,7,1,1
+Q3,Q3,SFT → RL,qwen_refusal__qwen_sft_qwen_rl,qwen,refusal,8,8,56,56,0,7,1,1
+Q4,Q4,Base → SFT,qwen_harm__base_sft,qwen,harm,8,8,80,80,0,10,1,1
+Q5,Q5,Base → RL,qwen_harm__base_rl,qwen,harm,8,8,80,80,0,10,1,1
+Q6,Q6,SFT → RL,qwen_harm__sft_rl,qwen,harm,8,8,80,80,0,10,1,1
+all,all,all transfers of the paper's adaptation figures,,,,8,8,1232,1232,0,,19,19
