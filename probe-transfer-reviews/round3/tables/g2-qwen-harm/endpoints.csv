@@ -2,19 +2,19 @@ row_id,panel,transfer,view,arm,arm_label,which,budget_groups,n,mean,source_row
 Q4|total|cv_refit|smallest,Q4,Base → SFT,total,cv_refit,Cross-validated refit on all labelled groups,smallest,500,8,52.01846298685449,Q4|total|cv_refit|B500|tpr|T*c
 Q4|total|cv_refit|largest,Q4,Base → SFT,total,cv_refit,Cross-validated refit on all labelled groups,largest,40400,6,69.05052477422504,Q4|total|cv_refit|B40400|tpr|T*c
 Q5|total|cv_refit|smallest,Q5,Base → RL,total,cv_refit,Cross-validated refit on all labelled groups,smallest,500,8,52.08645698943478,Q5|total|cv_refit|B500|tpr|T*c
-Q5|total|cv_refit|largest,Q5,Base → RL,total,cv_refit,Cross-validated refit on all labelled groups,largest,40400,6,69.06098539000662,Q5|total|cv_refit|B40400|tpr|T*c
+Q5|total|cv_refit|largest,Q5,Base → RL,total,cv_refit,Cross-validated refit on all labelled groups,largest,40400,7,69.06497038649483,Q5|total|cv_refit|B40400|tpr|T*c
 Q6|total|cv_refit|smallest,Q6,SFT → RL,total,cv_refit,Cross-validated refit on all labelled groups,smallest,500,8,52.08645698943478,Q6|total|cv_refit|B500|tpr|T*c
 Q6|total|cv_refit|largest,Q6,SFT → RL,total,cv_refit,Cross-validated refit on all labelled groups,largest,40400,6,69.05343050083104,Q6|total|cv_refit|B40400|tpr|T*c
 Q4|total|xfit_corr|smallest,Q4,Base → SFT,total,xfit_corr,Cross-fitted correction (new variant; rules on the tuning rows),smallest,500,8,67.52850517800482,Q4|total|xfit_corr|B500|tpr|T*c
 Q4|total|xfit_corr|largest,Q4,Base → SFT,total,xfit_corr,Cross-fitted correction (new variant; rules on the tuning rows),largest,40400,6,68.97381359182677,Q4|total|xfit_corr|B40400|tpr|T*c
 Q5|total|xfit_corr|smallest,Q5,Base → RL,total,xfit_corr,Cross-fitted correction (new variant; rules on the tuning rows),smallest,500,8,67.28137313016492,Q5|total|xfit_corr|B500|tpr|T*c
-Q5|total|xfit_corr|largest,Q5,Base → RL,total,xfit_corr,Cross-fitted correction (new variant; rules on the tuning rows),largest,40400,6,69.01275032834711,Q5|total|xfit_corr|B40400|tpr|T*c
+Q5|total|xfit_corr|largest,Q5,Base → RL,total,xfit_corr,Cross-fitted correction (new variant; rules on the tuning rows),largest,40400,7,69.03508291283318,Q5|total|xfit_corr|B40400|tpr|T*c
 Q6|total|xfit_corr|smallest,Q6,SFT → RL,total,xfit_corr,Cross-fitted correction (new variant; rules on the tuning rows),smallest,500,8,68.41242721154852,Q6|total|xfit_corr|B500|tpr|T*c
 Q6|total|xfit_corr|largest,Q6,SFT → RL,total,xfit_corr,Cross-fitted correction (new variant; rules on the tuning rows),largest,40400,6,68.99124795146274,Q6|total|xfit_corr|B40400|tpr|T*c
 Q4|total|xfit_blend|smallest,Q4,Base → SFT,total,xfit_blend,Cross-fitted signed direct blend (rules on the tuning rows),smallest,500,8,67.480124830015,Q4|total|xfit_blend|B500|tpr|T*c
 Q4|total|xfit_blend|largest,Q4,Base → SFT,total,xfit_blend,Cross-fitted signed direct blend (rules on the tuning rows),largest,40400,6,69.21557004544556,Q4|total|xfit_blend|B40400|tpr|T*c
 Q5|total|xfit_blend|smallest,Q5,Base → RL,total,xfit_blend,Cross-fitted signed direct blend (rules on the tuning rows),smallest,500,8,67.29619233585551,Q5|total|xfit_blend|B500|tpr|T*c
-Q5|total|xfit_blend|largest,Q5,Base → RL,total,xfit_blend,Cross-fitted signed direct blend (rules on the tuning rows),largest,40400,6,69.1394400083685,Q5|total|xfit_blend|B40400|tpr|T*c
+Q5|total|xfit_blend|largest,Q5,Base → RL,total,xfit_blend,Cross-fitted signed direct blend (rules on the tuning rows),largest,40400,7,69.14915343730853,Q5|total|xfit_blend|B40400|tpr|T*c
 Q6|total|xfit_blend|smallest,Q6,SFT → RL,total,xfit_blend,Cross-fitted signed direct blend (rules on the tuning rows),smallest,500,8,68.4176575194393,Q6|total|xfit_blend|B500|tpr|T*c
 Q6|total|xfit_blend|largest,Q6,SFT → RL,total,xfit_blend,Cross-fitted signed direct blend (rules on the tuning rows),largest,40400,6,68.99415367806874,Q6|total|xfit_blend|B40400|tpr|T*c
 Q4|fitting|pub_corr|smallest,Q4,Base → SFT,fitting,pub_corr,"Published correction with its skip rules (fit on m, estimate on E)",smallest,500,8,68.03410160744795,Q4|fitting|pub_corr|m500|tpr|T*c
@@ -47,18 +47,18 @@ Q6|reference|ceiling|smallest,Q6,SFT → RL,reference,ceiling,Full refit on all 
 Q4|difference|P1|smallest,Q4,Base → SFT,difference,xfit_corr - cv_refit,cross-fitted correction minus refit on the same labelled groups,smallest,500,8,15.510042191150317,Q4|budget|total|xfit_corr-cv_refit|B500|tpr|T*c
 Q4|difference|P1|largest,Q4,Base → SFT,difference,xfit_corr - cv_refit,cross-fitted correction minus refit on the same labelled groups,largest,40400,6,-0.07671118239827024,Q4|budget|total|xfit_corr-cv_refit|B40400|tpr|T*c
 Q5|difference|P1|smallest,Q5,Base → RL,difference,xfit_corr - cv_refit,cross-fitted correction minus refit on the same labelled groups,smallest,500,8,15.19491614073015,Q5|budget|total|xfit_corr-cv_refit|B500|tpr|T*c
-Q5|difference|P1|largest,Q5,Base → RL,difference,xfit_corr - cv_refit,cross-fitted correction minus refit on the same labelled groups,largest,40400,6,-0.04823506165951841,Q5|budget|total|xfit_corr-cv_refit|B40400|tpr|T*c
+Q5|difference|P1|largest,Q5,Base → RL,difference,xfit_corr - cv_refit,cross-fitted correction minus refit on the same labelled groups,largest,40400,7,-0.02988747366166373,Q5|budget|total|xfit_corr-cv_refit|B40400|tpr|T*c
 Q6|difference|P1|smallest,Q6,SFT → RL,difference,xfit_corr - cv_refit,cross-fitted correction minus refit on the same labelled groups,smallest,500,8,16.32597022211374,Q6|budget|total|xfit_corr-cv_refit|B500|tpr|T*c
 Q6|difference|P1|largest,Q6,SFT → RL,difference,xfit_corr - cv_refit,cross-fitted correction minus refit on the same labelled groups,largest,40400,6,-0.062182549368294815,Q6|budget|total|xfit_corr-cv_refit|B40400|tpr|T*c
 Q4|difference|P2|smallest,Q4,Base → SFT,difference,xfit_corr - prior_used,cross-fitted correction minus starting probe,smallest,500,8,-0.3290735381289469,Q4|budget|total|xfit_corr-prior_used|B500|tpr|T*c
 Q4|difference|P2|largest,Q4,Base → SFT,difference,xfit_corr - prior_used,cross-fitted correction minus starting probe,largest,40400,6,1.0838360240361666,Q4|budget|total|xfit_corr-prior_used|B40400|tpr|T*c
 Q5|difference|P2|smallest,Q5,Base → RL,difference,xfit_corr - prior_used,cross-fitted correction minus starting probe,smallest,500,8,-0.32645838418355133,Q5|budget|total|xfit_corr-prior_used|B500|tpr|T*c
-Q5|difference|P2|largest,Q5,Base → RL,difference,xfit_corr - prior_used,cross-fitted correction minus starting probe,largest,40400,6,1.4232248916163925,Q5|budget|total|xfit_corr-prior_used|B40400|tpr|T*c
+Q5|difference|P2|largest,Q5,Base → RL,difference,xfit_corr - prior_used,cross-fitted correction minus starting probe,largest,40400,7,1.436093109442942,Q5|budget|total|xfit_corr-prior_used|B40400|tpr|T*c
 Q6|difference|P2|smallest,Q6,SFT → RL,difference,xfit_corr - prior_used,cross-fitted correction minus starting probe,smallest,500,8,-0.41886049025419325,Q6|budget|total|xfit_corr-prior_used|B500|tpr|T*c
 Q6|difference|P2|largest,Q6,SFT → RL,difference,xfit_corr - prior_used,cross-fitted correction minus starting probe,largest,40400,6,0.1406371677301621,Q6|budget|total|xfit_corr-prior_used|B40400|tpr|T*c
 Q4|difference|P3|smallest,Q4,Base → SFT,difference,xfit_corr - xfit_blend,cross-fitted correction minus cross-fitted direct blend,smallest,500,8,0.04838034798981816,Q4|budget|total|xfit_corr-xfit_blend|B500|tpr|T*c
 Q4|difference|P3|largest,Q4,Base → SFT,difference,xfit_corr - xfit_blend,cross-fitted correction minus cross-fitted direct blend,largest,40400,6,-0.24175645361879106,Q4|budget|total|xfit_corr-xfit_blend|B40400|tpr|T*c
 Q5|difference|P3|smallest,Q5,Base → RL,difference,xfit_corr - xfit_blend,cross-fitted correction minus cross-fitted direct blend,smallest,500,8,-0.014819205690574933,Q5|budget|total|xfit_corr-xfit_blend|B500|tpr|T*c
-Q5|difference|P3|largest,Q5,Base → RL,difference,xfit_corr - xfit_blend,cross-fitted correction minus cross-fitted direct blend,largest,40400,6,-0.1266896800213857,Q5|budget|total|xfit_corr-xfit_blend|B40400|tpr|T*c
+Q5|difference|P3|largest,Q5,Base → RL,difference,xfit_corr - xfit_blend,cross-fitted correction minus cross-fitted direct blend,largest,40400,7,-0.1140705244753499,Q5|budget|total|xfit_corr-xfit_blend|B40400|tpr|T*c
 Q6|difference|P3|smallest,Q6,SFT → RL,difference,xfit_corr - xfit_blend,cross-fitted correction minus cross-fitted direct blend,smallest,500,8,-0.005230307890791153,Q6|budget|total|xfit_corr-xfit_blend|B500|tpr|T*c
 Q6|difference|P3|largest,Q6,SFT → RL,difference,xfit_corr - xfit_blend,cross-fitted correction minus cross-fitted direct blend,largest,40400,6,-0.002905726605995085,Q6|budget|total|xfit_corr-xfit_blend|B40400|tpr|T*c

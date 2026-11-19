@@ -1,10 +1,10 @@
 row_id,view,arm,which,panels_in_block,panels_with_a_value,min_mean,max_mean,budget_min,budget_max,seeds_min,seeds_max
 total|cv_refit|smallest,total,cv_refit,smallest,3,3,52.01846298685449,52.08645698943478,500,500,8,8
-total|cv_refit|largest,total,cv_refit,largest,3,3,69.05052477422504,69.06098539000662,40400,40400,6,6
+total|cv_refit|largest,total,cv_refit,largest,3,3,69.05052477422504,69.06497038649483,40400,40400,6,7
 total|xfit_corr|smallest,total,xfit_corr,smallest,3,3,67.28137313016492,68.41242721154852,500,500,8,8
-total|xfit_corr|largest,total,xfit_corr,largest,3,3,68.97381359182677,69.01275032834711,40400,40400,6,6
+total|xfit_corr|largest,total,xfit_corr,largest,3,3,68.97381359182677,69.03508291283318,40400,40400,6,7
 total|xfit_blend|smallest,total,xfit_blend,smallest,3,3,67.29619233585551,68.4176575194393,500,500,8,8
-total|xfit_blend|largest,total,xfit_blend,largest,3,3,68.99415367806874,69.21557004544556,40400,40400,6,6
+total|xfit_blend|largest,total,xfit_blend,largest,3,3,68.99415367806874,69.21557004544556,40400,40400,6,7
 fitting|pub_corr|smallest,fitting,pub_corr,smallest,3,3,67.80135290630776,68.76503713518602,500,500,8,8
 fitting|pub_corr|largest,fitting,pub_corr,largest,3,3,68.79598312353987,69.10689587038134,36400,36400,6,6
 fitting|pub_refit|smallest,fitting,pub_refit,smallest,3,3,53.92360263607518,53.94060113672025,500,500,8,8
@@ -15,8 +15,8 @@ reference|frozen|smallest,reference,frozen,zero labels,3,3,67.52981275497751,68.
 reference|prior_used|smallest,reference,prior_used,zero labels,3,3,67.60783151434848,68.83128770180271,,,8,8
 reference|ceiling|smallest,reference,ceiling,zero labels,3,3,68.94766205237282,69.1398758673594,,,8,8
 difference|P1|smallest,difference,P1,smallest,3,3,15.19491614073015,16.32597022211374,500,500,8,8
-difference|P1|largest,difference,P1,largest,3,3,-0.07671118239827024,-0.04823506165951841,40400,40400,6,6
+difference|P1|largest,difference,P1,largest,3,3,-0.07671118239827024,-0.02988747366166373,40400,40400,6,7
 difference|P2|smallest,difference,P2,smallest,3,3,-0.41886049025419325,-0.32645838418355133,500,500,8,8
-difference|P2|largest,difference,P2,largest,3,3,0.1406371677301621,1.4232248916163925,40400,40400,6,6
+difference|P2|largest,difference,P2,largest,3,3,0.1406371677301621,1.436093109442942,40400,40400,6,7
 difference|P3|smallest,difference,P3,smallest,3,3,-0.014819205690574933,0.04838034798981816,500,500,8,8
-difference|P3|largest,difference,P3,largest,3,3,-0.24175645361879106,-0.002905726605995085,40400,40400,6,6
+difference|P3|largest,difference,P3,largest,3,3,-0.24175645361879106,-0.002905726605995085,40400,40400,6,7

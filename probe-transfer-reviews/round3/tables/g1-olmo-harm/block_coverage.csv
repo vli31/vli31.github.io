@@ -1,9 +1,9 @@
 row_id,panel,transfer,panel_id,seeds_planned,seeds_complete,seeds_all_label_complete,seeds_published_complete,seeds_with_a_cell,cells_planned,cells_present,cells_failed,all_label_cells_planned,all_label_cells_present,published_cells_planned,published_cells_present,budgets_total_view,budgets_fitting_view,panels,panels_with_a_cell,panels_complete,seeds_all_label_min_where_a_cell,seeds_all_label_max_where_a_cell,seeds_published_min_where_a_cell,seeds_published_max_where_a_cell
 H1,H1,Base → DPO,olmo_harm__base_dpo,8,8,8,8,8,256,256,0,168,168,88,88,21,11,1,1,1,,,,
-H2,H2,Instruct → clinical,olmo_harm__irl_sft2_clin,8,3,3,7,8,256,204,0,168,123,88,81,21,11,1,1,0,,,,
-H3,H3,Instruct → code,olmo_harm__irl_sft2_code,8,5,5,7,8,256,226,0,168,145,88,81,21,11,1,1,0,,,,
-H4,H4,Instruct → science,olmo_harm__irl_sft2_sci,8,7,7,7,8,256,235,0,168,154,88,81,21,11,1,1,0,,,,
-H5,H5,SFT → DPO,olmo_harm__sft_dpo,8,7,8,7,8,24,23,0,16,16,8,7,2,1,1,1,0,,,,
-H6,H6,"Base → SFT step 15,000",olmo_harm__base_sft_s15000,8,6,6,6,8,192,179,0,128,120,64,59,16,8,1,1,0,,,,
+H2,H2,Instruct → clinical,olmo_harm__irl_sft2_clin,8,4,4,8,8,256,212,0,168,124,88,88,21,11,1,1,0,,,,
+H3,H3,Instruct → code,olmo_harm__irl_sft2_code,8,6,6,7,8,256,241,0,168,159,88,82,21,11,1,1,0,,,,
+H4,H4,Instruct → science,olmo_harm__irl_sft2_sci,8,8,8,8,8,256,256,0,168,168,88,88,21,11,1,1,1,,,,
+H5,H5,SFT → DPO,olmo_harm__sft_dpo,8,8,8,8,8,24,24,0,16,16,8,8,2,1,1,1,1,,,,
+H6,H6,"Base → SFT step 15,000",olmo_harm__base_sft_s15000,8,7,7,7,8,192,186,0,128,124,64,62,16,8,1,1,0,,,,
 H7,H7,"Base → SFT step 30,000",olmo_harm__base_sft_s30000,8,6,6,6,8,192,180,0,128,120,64,60,16,8,1,1,0,,,,
-all,all,"OLMo-3 7B, harm",,8,3,3,6,8,1432,1303,0,944,846,488,457,,,7,7,1,6,8,7,8
+all,all,"OLMo-3 7B, harm",,8,4,4,6,8,1432,1355,0,944,879,488,476,,,7,7,3,6,8,8,8

@@ -1,10 +1,10 @@
-row_id,contrast_role,contrast_label,region,metric,test_set,panels_in_block,panels_with_a_value,min_mean,max_mean,seeds_min,seeds_max,resolved_above_0,resolved_below_0,not_resolved,no_status
-P1|small,P1,cross-fitted correction minus refit on the same labelled groups,small,tpr,T*c,3,3,0.46583850931676807,15.06332931242461,8,8,0,0,0,3
-P1|intermediate,P1,cross-fitted correction minus refit on the same labelled groups,intermediate,tpr,T*c,3,3,-1.818832931242465,4.253367511057505,8,8,0,0,0,3
-P1|large,P1,cross-fitted correction minus refit on the same labelled groups,large,tpr,T*c,3,3,-1.9328633896260552,0.9612484921592213,6,8,0,0,0,3
-P2|small,P2,cross-fitted correction minus starting probe,small,tpr,T*c,3,3,-0.9800965018094079,8.18840579710145,8,8,0,0,0,3
-P2|intermediate,P2,cross-fitted correction minus starting probe,intermediate,tpr,T*c,3,3,0.5252312022517138,18.975802277432713,8,8,0,0,0,3
-P2|large,P2,cross-fitted correction minus starting probe,large,tpr,T*c,3,3,1.5392541214314406,22.8907867494824,6,8,0,0,0,3
-P3|small,P3,cross-fitted correction minus cross-fitted direct blend,small,tpr,T*c,3,3,-1.203759549658221,-0.10177925211097438,8,8,0,0,0,3
-P3|intermediate,P3,cross-fitted correction minus cross-fitted direct blend,intermediate,tpr,T*c,3,3,-0.061570164857261744,-0.016963208685154996,8,8,0,0,0,3
-P3|large,P3,cross-fitted correction minus cross-fitted direct blend,large,tpr,T*c,3,3,-0.17245928829915336,2.3684757858670005e-15,6,8,0,0,0,3
+row_id,contrast_role,contrast_label,region,metric,test_set,panels_in_block,panels_with_a_value,panels_below_6_seeds,min_mean,max_mean,seeds_min,seeds_max,resolved_above_0,resolved_below_0,not_resolved,no_status
+P1|small,P1,cross-fitted correction minus refit on the same labelled groups,small,tpr,T*c,3,3,0,0.46583850931676807,15.06332931242461,8,8,0,0,0,3
+P1|intermediate,P1,cross-fitted correction minus refit on the same labelled groups,intermediate,tpr,T*c,3,3,0,-1.818832931242465,4.253367511057505,8,8,0,0,0,3
+P1|large,P1,cross-fitted correction minus refit on the same labelled groups,large,tpr,T*c,3,3,0,-1.9328633896260552,0.9612484921592213,6,8,0,0,0,3
+P2|small,P2,cross-fitted correction minus starting probe,small,tpr,T*c,3,3,0,-0.9800965018094079,8.18840579710145,8,8,0,0,0,3
+P2|intermediate,P2,cross-fitted correction minus starting probe,intermediate,tpr,T*c,3,3,0,0.5252312022517138,18.975802277432713,8,8,0,0,0,3
+P2|large,P2,cross-fitted correction minus starting probe,large,tpr,T*c,3,3,0,1.5392541214314406,22.8907867494824,6,8,0,0,0,3
+P3|small,P3,cross-fitted correction minus cross-fitted direct blend,small,tpr,T*c,3,3,0,-1.203759549658221,-0.10177925211097438,8,8,0,0,0,3
+P3|intermediate,P3,cross-fitted correction minus cross-fitted direct blend,intermediate,tpr,T*c,3,3,0,-0.061570164857261744,-0.016963208685154996,8,8,0,0,0,3
+P3|large,P3,cross-fitted correction minus cross-fitted direct blend,large,tpr,T*c,3,3,0,-0.17245928829915336,2.3684757858670005e-15,6,8,0,0,0,3
