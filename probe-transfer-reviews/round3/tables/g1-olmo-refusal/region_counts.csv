@@ -1,0 +1,10 @@
+row_id,contrast_role,contrast_label,region,metric,test_set,panels_in_block,panels_with_a_value,min_mean,max_mean,seeds_min,seeds_max,resolved_above_0,resolved_below_0,not_resolved,no_status
+P1|small,P1,cross-fitted correction minus refit on the same labelled groups,small,tpr,T*c,6,6,-2.81135420444015,9.734254418720441,8,8,0,0,0,6
+P1|intermediate,P1,cross-fitted correction minus refit on the same labelled groups,intermediate,tpr,T*c,6,6,-1.287925066177964,2.0992922934670446,6,8,0,0,0,6
+P1|large,P1,cross-fitted correction minus refit on the same labelled groups,large,tpr,T*c,6,6,-1.6989920586438565,0.09405596518796422,6,8,0,0,0,6
+P2|small,P2,cross-fitted correction minus starting probe,small,tpr,T*c,6,6,0.19119198312236563,36.066356139279165,8,8,0,0,0,6
+P2|intermediate,P2,cross-fitted correction minus starting probe,intermediate,tpr,T*c,6,6,0.9368407172995834,46.031230910201586,6,8,0,0,0,6
+P2|large,P2,cross-fitted correction minus starting probe,large,tpr,T*c,6,6,1.3736155063291218,47.67104459376908,6,8,0,0,0,6
+P3|small,P3,cross-fitted correction minus cross-fitted direct blend,small,tpr,T*c,6,6,-1.8579515693621822,0.4417267184035545,8,8,0,0,0,6
+P3|intermediate,P3,cross-fitted correction minus cross-fitted direct blend,intermediate,tpr,T*c,6,6,-0.09958511504784795,0.0080838876570688,6,8,0,0,0,6
+P3|large,P3,cross-fitted correction minus cross-fitted direct blend,large,tpr,T*c,6,6,-0.16989920586438956,0.013598452798260515,6,8,0,0,0,6

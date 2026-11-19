@@ -1,0 +1,22 @@
+row_id,view,arm,which,panels_in_block,panels_with_a_value,min_mean,max_mean,budget_min,budget_max,seeds_min,seeds_max
+total|cv_refit|smallest,total,cv_refit,smallest,6,6,66.85438301771534,78.72436252771618,100,100,8,8
+total|cv_refit|largest,total,cv_refit,largest,6,6,87.08575137446549,90.92468126385809,24000,24000,6,8
+total|xfit_corr|smallest,total,xfit_corr,smallest,6,6,61.388973732437385,85.91969936708861,100,100,8,8
+total|xfit_corr|largest,total,xfit_corr,largest,6,6,85.42875687232743,90.66657427937915,24000,24000,6,8
+total|xfit_blend|smallest,total,xfit_blend,smallest,6,6,66.74557116676847,86.29351265822785,100,100,8,8
+total|xfit_blend|largest,total,xfit_blend,largest,6,6,85.54329566279779,90.66484201773835,24000,24000,6,8
+fitting|pub_corr|smallest,fitting,pub_corr,smallest,6,6,72.71686010995725,86.59810126582278,100,100,8,8
+fitting|pub_corr|largest,fitting,pub_corr,largest,6,6,86.59132559560172,90.38421563192905,20000,20000,6,8
+fitting|pub_refit|smallest,fitting,pub_refit,smallest,6,6,71.86354612095298,80.03568458980044,100,100,8,8
+fitting|pub_refit|largest,fitting,pub_refit,largest,6,6,86.7612248014661,90.35303492239468,20000,20000,6,8
+fitting|pub_blend|smallest,fitting,pub_blend,smallest,6,6,72.68058949297496,86.60601265822785,100,100,8,8
+fitting|pub_blend|largest,fitting,pub_blend,largest,6,6,86.58559865607819,90.30972838137473,20000,20000,6,8
+reference|frozen|smallest,reference,frozen,zero labels,6,6,41.020158827122785,86.37856012658227,,,8,8
+reference|prior_used|smallest,reference,prior_used,zero labels,6,6,37.354917532070864,86.32911392405063,,,8,8
+reference|ceiling|smallest,reference,ceiling,zero labels,6,6,86.78795051924251,90.80169068736141,,,8,8
+difference|P1|smallest,difference,P1,smallest,6,6,-8.029130907772274,17.948095593726663,100,100,8,8
+difference|P1|largest,difference,P1,largest,6,6,-1.6569945021380583,0.07705789919013739,24000,24000,6,8
+difference|P2|smallest,difference,P2,smallest,6,6,-0.4094145569620249,24.034056200366525,100,100,8,8
+difference|P2|largest,difference,P2,largest,6,6,1.2143987341772213,48.07383934025657,24000,24000,6,8
+difference|P3|smallest,difference,P3,smallest,6,6,-5.634292276078812,1.0791990022172957,100,100,8,8
+difference|P3|largest,difference,P3,largest,6,6,-0.11453879047037496,0.012087513598454317,24000,24000,6,8

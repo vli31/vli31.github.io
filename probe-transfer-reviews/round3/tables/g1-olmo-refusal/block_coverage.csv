@@ -1,0 +1,8 @@
+row_id,panel,transfer,panel_id,seeds_planned,seeds_complete,seeds_all_label_complete,seeds_published_complete,seeds_with_a_cell,cells_planned,cells_present,cells_failed,all_label_cells_planned,all_label_cells_present,published_cells_planned,published_cells_present,budgets_total_view,budgets_fitting_view,panels,panels_with_a_cell,panels_complete,seeds_all_label_min_where_a_cell,seeds_all_label_max_where_a_cell,seeds_published_min_where_a_cell,seeds_published_max_where_a_cell
+R1,R1,Base → Think-SFT,olmo_refusal__base_think_sft,8,8,8,8,8,160,160,0,104,104,56,56,13,7,1,1,1,,,,
+R2,R2,Think-SFT → Instruct-SFT,olmo_refusal__think_sft_insft,8,6,6,6,8,160,136,0,104,90,56,46,13,7,1,1,0,,,,
+R3,R3,Base → Instruct-SFT,olmo_refusal__base_insft,8,7,8,7,8,160,155,0,104,104,56,51,13,7,1,1,0,,,,
+R4,R4,Instruct-SFT → Instruct-DPO,olmo_refusal__insft_indpo,8,8,8,8,8,160,160,0,104,104,56,56,13,7,1,1,1,,,,
+R5,R5,Think-SFT → Think-DPO,olmo_refusal__think_sft_think_dpo,8,8,8,8,8,160,160,0,104,104,56,56,13,7,1,1,1,,,,
+R6,R6,Think-DPO → Think-RLVR,olmo_refusal__think_dpo_think_rlvr,8,7,7,7,8,160,147,0,104,97,56,50,13,7,1,1,0,,,,
+all,all,"OLMo-3 7B, refusal",,8,6,6,6,8,960,918,0,624,603,336,315,,,6,6,3,8,8,8,8
