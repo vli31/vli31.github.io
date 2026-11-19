@@ -81,21 +81,21 @@ H6|fitting|pub_blend|largest,H6,"Base → SFT step 15,000",fitting,pub_blend,"Si
 H7|fitting|pub_blend|smallest,H7,"Base → SFT step 30,000",fitting,pub_blend,"Signed direct blend, same prior, target fit and estimation rows",smallest,25,8,67.04775271104292,H7|fitting|pub_blend|m25|tpr|T*c
 H7|fitting|pub_blend|largest,H7,"Base → SFT step 30,000",fitting,pub_blend,"Signed direct blend, same prior, target fit and estimation rows",largest,24000,6,71.02118855841093,H7|fitting|pub_blend|m24000|tpr|T*c
 H1|reference|frozen|smallest,H1,Base → DPO,reference,frozen,"Frozen source probe (source standardisation), 0 target labels",zero labels,,8,67.24824784685657,H1|reference|frozen|ref|tpr|T*c
-H2|reference|frozen|smallest,H2,Instruct → clinical,reference,frozen,"Frozen source probe (source standardisation), 0 target labels",zero labels,,6,69.13653428176248,H2|reference|frozen|ref|tpr|T*c
+H2|reference|frozen|smallest,H2,Instruct → clinical,reference,frozen,"Frozen source probe (source standardisation), 0 target labels",zero labels,,8,69.08539349349698,H2|reference|frozen|ref|tpr|T*c
 H3|reference|frozen|smallest,H3,Instruct → code,reference,frozen,"Frozen source probe (source standardisation), 0 target labels",zero labels,,8,69.5513267547683,H3|reference|frozen|ref|tpr|T*c
 H4|reference|frozen|smallest,H4,Instruct → science,reference,frozen,"Frozen source probe (source standardisation), 0 target labels",zero labels,,8,69.1363889954322,H4|reference|frozen|ref|tpr|T*c
 H5|reference|frozen|smallest,H5,SFT → DPO,reference,frozen,"Frozen source probe (source standardisation), 0 target labels",zero labels,,8,71.1526726873322,H5|reference|frozen|ref|tpr|T*c
 H6|reference|frozen|smallest,H6,"Base → SFT step 15,000",reference,frozen,"Frozen source probe (source standardisation), 0 target labels",zero labels,,8,67.20030335785766,H6|reference|frozen|ref|tpr|T*c
 H7|reference|frozen|smallest,H7,"Base → SFT step 30,000",reference,frozen,"Frozen source probe (source standardisation), 0 target labels",zero labels,,8,66.53125980682728,H7|reference|frozen|ref|tpr|T*c
 H1|reference|prior_used|smallest,H1,Base → DPO,reference,prior_used,"Prior with target standardisation, 0 target labels",zero labels,,8,67.15584574078594,H1|reference|prior_used|ref|tpr|T*c
-H2|reference|prior_used|smallest,H2,Instruct → clinical,reference,prior_used,"Prior with target standardisation, 0 target labels",zero labels,,6,69.15571207736207,H2|reference|prior_used|ref|tpr|T*c
+H2|reference|prior_used|smallest,H2,Instruct → clinical,reference,prior_used,"Prior with target standardisation, 0 target labels",zero labels,,8,69.12069807175982,H2|reference|prior_used|ref|tpr|T*c
 H3|reference|prior_used|smallest,H3,Instruct → code,reference,prior_used,"Prior with target standardisation, 0 target labels",zero labels,,8,69.5966560898218,H3|reference|prior_used|ref|tpr|T*c
 H4|reference|prior_used|smallest,H4,Instruct → science,reference,prior_used,"Prior with target standardisation, 0 target labels",zero labels,,8,69.17300115066774,H4|reference|prior_used|ref|tpr|T*c
 H5|reference|prior_used|smallest,H5,SFT → DPO,reference,prior_used,"Prior with target standardisation, 0 target labels",zero labels,,8,71.18013180375885,H5|reference|prior_used|ref|tpr|T*c
 H6|reference|prior_used|smallest,H6,"Base → SFT step 15,000",reference,prior_used,"Prior with target standardisation, 0 target labels",zero labels,,8,67.1876634471216,H6|reference|prior_used|ref|tpr|T*c
 H7|reference|prior_used|smallest,H7,"Base → SFT step 30,000",reference,prior_used,"Prior with target standardisation, 0 target labels",zero labels,,8,66.54041284563617,H7|reference|prior_used|ref|tpr|T*c
 H1|reference|ceiling|smallest,H1,Base → DPO,reference,ceiling,Full refit on all N probe-train groups (reference line),zero labels,,8,71.32919557864639,H1|reference|ceiling|ref|tpr|T*c
-H2|reference|ceiling|smallest,H2,Instruct → clinical,reference,ceiling,Full refit on all N probe-train groups (reference line),zero labels,,6,70.05474388925694,H2|reference|ceiling|ref|tpr|T*c
+H2|reference|ceiling|smallest,H2,Instruct → clinical,reference,ceiling,Full refit on all N probe-train groups (reference line),zero labels,,8,70.10181666027405,H2|reference|ceiling|ref|tpr|T*c
 H3|reference|ceiling|smallest,H3,Instruct → code,reference,ceiling,Full refit on all N probe-train groups (reference line),zero labels,,8,69.79192091774468,H3|reference|ceiling|ref|tpr|T*c
 H4|reference|ceiling|smallest,H4,Instruct → science,reference,ceiling,Full refit on all N probe-train groups (reference line),zero labels,,8,70.2591617559887,H4|reference|ceiling|ref|tpr|T*c
 H5|reference|ceiling|smallest,H5,SFT → DPO,reference,ceiling,Full refit on all N probe-train groups (reference line),zero labels,,8,71.32919557864639,H5|reference|ceiling|ref|tpr|T*c

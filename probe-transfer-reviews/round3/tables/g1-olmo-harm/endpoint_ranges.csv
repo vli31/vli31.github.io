@@ -11,9 +11,9 @@ fitting|pub_refit|smallest,fitting,pub_refit,smallest,7,7,30.18497855573765,68.1
 fitting|pub_refit|largest,fitting,pub_refit,largest,7,6,69.77928100700862,71.3226576937829,24000,36400,6,8
 fitting|pub_blend|smallest,fitting,pub_blend,smallest,7,7,67.04775271104292,71.30752716024169,25,8000,7,8
 fitting|pub_blend|largest,fitting,pub_blend,largest,7,6,69.97504395949251,71.39370270929949,24000,36400,6,8
-reference|frozen|smallest,reference,frozen,zero labels,7,7,66.53125980682728,71.1526726873322,,,6,8
-reference|prior_used|smallest,reference,prior_used,zero labels,7,7,66.54041284563617,71.18013180375885,,,6,8
-reference|ceiling|smallest,reference,ceiling,zero labels,7,7,69.79192091774468,71.32919557864639,,,6,8
+reference|frozen|smallest,reference,frozen,zero labels,7,7,66.53125980682728,71.1526726873322,,,8,8
+reference|prior_used|smallest,reference,prior_used,zero labels,7,7,66.54041284563617,71.18013180375885,,,8,8
+reference|ceiling|smallest,reference,ceiling,zero labels,7,7,69.79192091774468,71.32919557864639,,,8,8
 difference|P1|smallest,difference,P1,smallest,7,7,3.6947766658530643,34.87394957983193,25,8000,6,8
 difference|P1|largest,difference,P1,largest,7,7,0.03879145019003438,2.726733847065802,12000,40400,5,8
 difference|P2|smallest,difference,P2,smallest,7,7,-1.7578193102967337,0.6882213466299394,25,8000,6,8
