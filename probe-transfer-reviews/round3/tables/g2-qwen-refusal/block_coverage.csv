@@ -1,5 +1,5 @@
 row_id,panel,transfer,panel_id,seeds_planned,seeds_complete,seeds_all_label_complete,seeds_published_complete,seeds_with_a_cell,cells_planned,cells_present,cells_failed,all_label_cells_planned,all_label_cells_present,published_cells_planned,published_cells_present,budgets_total_view,budgets_fitting_view,panels,panels_with_a_cell,panels_complete,seeds_all_label_min_where_a_cell,seeds_all_label_max_where_a_cell,seeds_published_min_where_a_cell,seeds_published_max_where_a_cell
-Q1,Q1,Base → SFT,qwen_refusal__qwen_base_qwen_sft,8,5,6,5,8,160,147,0,104,96,56,51,13,7,1,1,0,,,,
+Q1,Q1,Base → SFT,qwen_refusal__qwen_base_qwen_sft,8,7,8,7,8,160,159,0,104,104,56,55,13,7,1,1,0,,,,
 Q2,Q2,Base → RL,qwen_refusal__qwen_base_qwen_rl,8,8,8,8,8,160,160,0,104,104,56,56,13,7,1,1,1,,,,
-Q3,Q3,SFT → RL,qwen_refusal__qwen_sft_qwen_rl,8,6,6,6,8,160,148,0,104,96,56,52,13,7,1,1,0,,,,
-all,all,"Qwen3-4B, refusal",,8,5,6,5,8,480,455,0,312,296,168,159,,,3,3,1,8,8,8,8
+Q3,Q3,SFT → RL,qwen_refusal__qwen_sft_qwen_rl,8,8,8,8,8,160,160,0,104,104,56,56,13,7,1,1,1,,,,
+all,all,"Qwen3-4B, refusal",,8,7,8,7,8,480,479,0,312,312,168,167,,,3,3,2,8,8,8,8

@@ -1,5 +1,5 @@
 row_id,panel,transfer,panel_id,seeds_planned,seeds_complete,seeds_all_label_complete,seeds_published_complete,seeds_with_a_cell,cells_planned,cells_present,cells_failed,all_label_cells_planned,all_label_cells_present,published_cells_planned,published_cells_present,budgets_total_view,budgets_fitting_view,panels,panels_with_a_cell,panels_complete,seeds_all_label_min_where_a_cell,seeds_all_label_max_where_a_cell,seeds_published_min_where_a_cell,seeds_published_max_where_a_cell
-Q4,Q4,Base → SFT,qwen_harm__base_sft,8,5,6,5,8,232,195,0,152,128,80,67,19,10,1,1,0,,,,
-Q5,Q5,Base → RL,qwen_harm__base_rl,8,6,7,6,8,232,208,0,152,140,80,68,19,10,1,1,0,,,,
-Q6,Q6,SFT → RL,qwen_harm__sft_rl,8,6,6,6,8,232,204,0,152,136,80,68,19,10,1,1,0,,,,
-all,all,"Qwen3-4B, harm",,8,5,6,5,8,696,607,0,456,404,240,203,,,3,3,0,8,8,8,8
+Q4,Q4,Base → SFT,qwen_harm__base_sft,8,5,6,5,8,232,210,0,152,143,80,67,19,10,1,1,0,,,,
+Q5,Q5,Base → RL,qwen_harm__base_rl,8,8,8,8,8,232,232,0,152,152,80,80,19,10,1,1,1,,,,
+Q6,Q6,SFT → RL,qwen_harm__sft_rl,8,7,7,7,8,232,220,0,152,146,80,74,19,10,1,1,0,,,,
+all,all,"Qwen3-4B, harm",,8,5,6,5,8,696,662,0,456,441,240,221,,,3,3,1,8,8,8,8
