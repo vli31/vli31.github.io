@@ -1,0 +1,15 @@
+row_id,scope,panel,method,method_label,levels,levels_smaller_budget_than_refit,levels_same_budget_as_refit,levels_larger_budget_than_refit,levels_not_reached,budgets_with_both_timed,fit_seconds_ratio_to_refit_min,fit_seconds_ratio_to_refit_max,acts_rows_at_smallest_budget,smallest_budget_groups,acts_rows_at_largest_budget,largest_budget_groups,acts_rows_constant_from_groups,extract_seconds_at_smallest_budget,extract_seconds_at_largest_budget
+R3|xfit_corr,Base → Instruct-SFT,R3,xfit_corr,Cross-fitted correction,3,1,2,0,0,13,2.559124821345791,3.5906021334709264,,,,,,,
+R3|xfit_blend,Base → Instruct-SFT,R3,xfit_blend,Cross-fitted direct blend,3,1,2,0,0,13,2.672521086567084,5.540978773777009,,,,,,,
+R3|pub_corr,Base → Instruct-SFT,R3,pub_corr,Published correction,3,0,1,2,0,7,0.020941126595334928,0.0590855468591222,,,,,,,
+R3|pub_refit,Base → Instruct-SFT,R3,pub_refit,Published refit,3,0,1,2,0,7,0.04520910395175211,0.20156587866313133,,,,,,,
+H1|xfit_corr,Base → DPO,H1,xfit_corr,Cross-fitted correction,3,2,1,0,0,21,2.596485725701019,3.026920509664524,,,,,,,
+H1|xfit_blend,Base → DPO,H1,xfit_blend,Cross-fitted direct blend,3,2,1,0,0,21,2.7016448738018104,3.553172736293782,,,,,,,
+H1|pub_corr,Base → DPO,H1,pub_corr,Published correction,3,1,1,1,0,11,0.027519800702067557,0.07950060749798675,,,,,,,
+H1|pub_refit,Base → DPO,H1,pub_refit,Published refit,3,0,0,3,0,11,0.027236448578225155,0.22333453443746995,,,,,,,
+all|xfit_corr,both transfers,all,xfit_corr,Cross-fitted correction,6,3,3,0,0,,,,,,,,,,
+all|xfit_blend,both transfers,all,xfit_blend,Cross-fitted direct blend,6,3,3,0,0,,,,,,,,,,
+all|pub_corr,both transfers,all,pub_corr,Published correction,6,1,2,3,0,,,,,,,,,,
+all|pub_refit,both transfers,all,pub_refit,Published refit,6,0,1,5,0,,,,,,,,,,
+R3|activations,Base → Instruct-SFT,R3,xfit_corr,Cross-fitted correction,,,,,,,,,22101.5,100,48373.125,24000,24000,105.13479110583734,229.7264212367012
+H1|activations,Base → DPO,H1,xfit_corr,Cross-fitted correction,,,,,,,,,180380.875,500,197461.5,40400,4000,900.2597903478488,986.2479432198024

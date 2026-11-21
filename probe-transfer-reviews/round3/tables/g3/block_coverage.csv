@@ -1,0 +1,4 @@
+row_id,transfer,panel,objective,panels,seeds_planned,seeds_complete,budgets_total_view,budgets_fitting_view,budgets_planned,cells_planned,cells_present,budgets_timed
+R3,Base → Instruct-SFT,R3,refusal,1,8,8,13,7,20,160,160,20
+H1,Base → DPO,H1,harm,1,8,8,21,11,32,256,256,32
+all,both transfers,all,,2,8,8,34,18,52,416,416,52

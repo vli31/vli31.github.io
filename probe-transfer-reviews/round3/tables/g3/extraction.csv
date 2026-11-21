@@ -1,0 +1,3 @@
+row_id,transfer,panel,objective,readout,rows,tokens,seconds,tokens_per_second,seconds_per_1000_examples,model_load_seconds,block_rows,block_seconds_median,block_seconds_min,block_seconds_max,readout_check_passed
+R3,Base → Instruct-SFT,R3,refusal,last token,48321,3861019,230.861229241993,16724.41497724509,4.777658352310445,3.159528741998656,2048,7.808315499001765,7.801245174996438,7.869632518995786,
+H1,Base → DPO,H1,harm,mean all tokens,197469,23275528,986.0761516799904,23604.18914943353,4.99357444297581,2.5843117679978604,2048,10.361383128998568,10.356166685000062,10.816741971000738,yes
